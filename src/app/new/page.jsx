@@ -2,7 +2,7 @@ import ProductForm from "@/components/Form"
 
 export default function newProductPage() {
     return (
-    <div>
+    <div className="flex justify-center items-center h-full">
         <ProductForm />
     </div>
   )
