@@ -1,36 +1,11 @@
 import { NextResponse } from 'next/server'
-import { conn } from '@/libs/mysql'
+import { products } from '@/libs/products'
 
 export async function GET() {
     try {
-        const res = await conn.query('SELECT * FROM product')
+        const res = await products
         return NextResponse.json(res)
     } catch (error) {
-        return NextResponse.json(
-            { message: error.message }, 
-            { status: 500 }
-        )
-    }
-}
-
-export async function POST(request) {
-    try {
-        const { name, description, price } = await request.json()
-
-        const res = await conn.query('INSERT INTO product SET ?', { 
-            name, 
-            description, 
-            price 
-        })
-
-        return NextResponse.json({ 
-            name, 
-            description, 
-            price, 
-            id: res.insertId 
-        })
-    } catch (error) {
-        console.log(error)
         return NextResponse.json(
             { message: error.message }, 
             { status: 500 }
