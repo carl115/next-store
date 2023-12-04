@@ -1,8 +1,14 @@
+'use client'
+
 import Link from 'next/link'
+import { useContext } from 'react'
 import { FaSearch } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa6";
+import { HandleShoppingCart } from '@/context/ShoppingCartContext'
 
 export default function NavBar() {
+    let { setIsOpen } = useContext(HandleShoppingCart)
+
     const buttonStyle = 'font-bold px-5 py-1 uppercase border-2 border-[#000000] rounded-3xl'
   return (
     <nav className='bg-[#ffc700] text-black py-4 flex justify-around items-center'>
@@ -18,7 +24,10 @@ export default function NavBar() {
             <button className={buttonStyle + ' flex items-center'}>
               United States <FaAngleDown className='ml-10' />
             </button>
-            <button className={buttonStyle}>Cart {0}</button>
+            <button 
+              className={buttonStyle} 
+              onClick={() => setIsOpen(true)}
+            >Cart {0}</button>
         </div>
     </nav>
   )

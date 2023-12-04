@@ -1,11 +1,17 @@
+'use client'
+
 import { FaRegWindowClose } from "react-icons/fa";
 import ShopProductCard from "./ShopProductCard";
+import { useContext } from 'react'
+import { HandleShoppingCart } from "@/context/ShoppingCartContext";
 
 export default function ShoppingCart() {
+    let { isOpen, setIsOpen } = useContext(HandleShoppingCart);
+
     return (
-        <div className="h-screen bg-gray-100 p-5 fixed top-0 right-0">
+        <div className={`h-screen bg-gray-100 p-5 fixed top-0 ${isOpen ? 'right-0' : 'right-[-650px]'} transition-all z-50`}>
             <div className="w-full flex justify-end text-3xl">
-                <button><FaRegWindowClose /></button>
+                <button onClick={() => setIsOpen(false)}><FaRegWindowClose /></button>
             </div>
             <h1 className="mb-10 pt-5 text-center text-2xl font-bold">Cart Items</h1>
             <div>

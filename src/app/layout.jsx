@@ -2,6 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 
 import NavBar from '@/components/NavBar'
+import ShoppingCartContext from '@/context/ShoppingCartContext'
+import ShoppingCart from '@/components/shopping/ShoppingCart'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,10 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <div className='h-[calc(100vh-5rem)]'>
-          {children}
-        </div>
+        <ShoppingCartContext>
+            <ShoppingCart></ShoppingCart>
+            <NavBar></NavBar>
+            <div className='h-[calc(100vh-5rem)]'>
+              {children}
+            </div>
+        </ShoppingCartContext>
       </body>
     </html>
   )
