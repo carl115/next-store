@@ -3,36 +3,39 @@ import Image from "next/image"
 export default function Header() {
     return (
         <header className="bg-[#ffc700] w-full h-[450px] border-b-4 border-black flex relative">
-            <Image
-                src='/pexels-andrea-piacquadio-3755706.jpg'
-                alt="product1"
-                width={400}
-                height={400}
-                className="w-[350px] h-[350px] rounded-full border border-black absolute left-0 top-0 bottom-0 m-auto"
-            />
-            <Image
-                src='/pexels-adrienne-andersen-2237801.jpg'
-                alt="product2"
-                width={400}
-                height={400}
-                style={{
-                    objectFit: 'cover',
-                    clipPath: 'polygon(0 0, 100% 0, 61% 51%, 100% 100%, 0 100%, 35% 51%)'
-                }}
-                className="w-[350px] h-[350px] border border-black absolute left-0 top-0 right-0 bottom-0 m-auto"
-            />
-            <Image
-                src='/pexels-taryn-elliott-5405629.jpg'
-                alt="product3"
-                width={400}
-                height={400}
-                style={{
-                    objectFit: 'cover',
-                    clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
-                }}
-                className="w-[350px] h-[350px] border border-black absolute top-0 right-0 bottom-0 m-auto"
-            />
-            <div className="m-auto border-4 border-black rounded-full absolute right-32 bottom-[-15%] overflow-hidden">
+            <div className="w-full overflow-hidden relative">
+                <div className="flex items-center gap-20 absolute left-[-240px] top-0 bottom-0">
+                    <Image
+                        src='/image-to-header-1.png'
+                        alt="image 1"
+                        width={400}
+                        height={400}
+                        className="w-[400px] h-[400px]"
+                    />
+                    <Image
+                        src='/image-to-header-2.png'
+                        alt="image 2"
+                        width={400}
+                        height={400}
+                        className="w-[400px] h-[400px]"
+                    />
+                    <Image
+                        src='/image-to-header-3.png'
+                        alt="image 3"
+                        width={400}
+                        height={400}
+                        className="w-[400px] h-[400px]"
+                    />
+                    <Image
+                        src='/image-to-header-4.png'
+                        alt="image 4"
+                        width={400}
+                        height={400}
+                        className="w-[400px] h-[400px]"
+                    />
+                </div>
+            </div>
+            <div className="m-auto border-4 border-black rounded-full absolute right-8 lg:right-32 bottom-[-15%] overflow-hidden">
                 <Image
                     src='/donated.jpg'
                     alt="product4"

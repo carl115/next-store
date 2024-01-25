@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ShoppingCartContext>
-            <ShoppingCart></ShoppingCart>
-            <NavBar></NavBar>
-            <div className='h-[calc(100vh-5rem)]'>
-              {children}
-            </div>
+          <ShoppingCart></ShoppingCart>
+          <NavBar></NavBar>
+          <div className='h-[calc(100vh-5rem)]'>
+            {children}
+          </div>
         </ShoppingCartContext>
       </body>
     </html>
